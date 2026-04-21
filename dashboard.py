@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="Supplier Risk Dashboard", layout="wide")
 
 # Load data
-df = pd.read_csv("data/procurement_data_cleaned.csv")
+df = pd.read_csv("procurement_data_cleaned.csv")
 
 st.title("Supplier Risk Prediction Dashboard")
 st.write("Interactive procurement analytics dashboard for supplier delivery risk monitoring.")
@@ -127,11 +127,11 @@ st.markdown("---")
 # Images
 # -------------------------
 st.subheader("Feature Importance")
-st.image("outputs/feature_importance.png", width="stretch")
+st.image("feature_importance.png", width="stretch")
 
 st.markdown("---")
 
 st.subheader("SHAP Explainability")
-st.image("outputs/shap_summary.png", width="stretch")
+st.image("shap_summary.png", width="stretch")
 
 
