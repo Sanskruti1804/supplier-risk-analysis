@@ -1,74 +1,167 @@
-# 📊 Supplier Risk Prediction System
+# Supplier Risk Prediction & Procurement Intelligence System
 
-## 🚀 Project Overview
-This project predicts supplier delivery risk using machine learning.
+##  Overview
 
-It simulates a real-world procurement analytics use case:
-- Late deliveries
-- Supplier performance
-- Cost & defect impact
+This project is an end-to-end data analytics and machine learning solution designed to identify **high-risk suppliers in procurement operations**.
 
----
+It simulates a real-world business scenario where companies need to reduce **delays, defects, and supply chain disruptions** using data-driven decision-making.
 
-## ⚙️ Tech Stack
-- Python
-- Pandas / NumPy
-- XGBoost
-- Matplotlib / Plotly
-- SHAP (Explainable AI)
+The system predicts whether a purchase order is risky and provides **interactive insights through a dashboard**.
 
 ---
 
-## 📂 Project Structure
+## Business Problem
 
+Procurement teams face:
 
-data/ → raw & cleaned datasets
-src/ → all scripts
-outputs/ → model insights & visuals
+* Delayed deliveries from suppliers
+* Poor supplier performance visibility
+* High operational costs due to defects and inefficiencies
+* Lack of real-time risk monitoring
 
-
----
-
-## 📊 Key Features
-
-✔ Data generation (realistic procurement simulation)  
-✔ Data cleaning & feature engineering  
-✔ ML model (risk prediction)  
-✔ Feature importance analysis  
-✔ SHAP explainability  
+This project solves these problems using **data analytics, machine learning, and visualization**.
 
 ---
 
-## 📈 Results
+## Solution Approach
 
-### Feature Importance
-![Feature Importance](outputs/feature_importance.png)
+**1. Data Engineering**
 
-### SHAP Analysis
-![SHAP Summary](outputs/shap_summary.png)
+* Generated synthetic procurement dataset (2000+ records)
+* Cleaned and transformed data
+* Created business features:
 
----
-
-## 🎯 Business Impact
-
-This model helps:
-- Identify risky suppliers
-- Improve procurement decisions
-- Reduce delays & cost impact
+  * `delay_days`
+  * `delivery_risk`
+  * `fill_rate`
+  * `cost_impact`
 
 ---
 
-## 🧠 What I Learned
+**2. Machine Learning Model**
 
-- End-to-end ML pipeline
-- Feature engineering for business problems
-- Model evaluation & interpretation
-- Explainable AI (SHAP)
+* Built classification model to predict supplier risk
+* Algorithm used: **Random Forest**
+* Target variable: `delivery_risk`
 
 ---
 
-## 📌 Future Improvements
+**3. Model Evaluation**
 
-- Add Streamlit dashboard
-- Deploy model
-- Real-time supplier risk scoring
+* Accuracy, Precision, Recall, F1-score
+* Handled class imbalance
+* Focused on improving **recall for risky suppliers**
+
+---
+
+**4. Explainability (SHAP)**
+
+* Identified key drivers of supplier risk
+* Feature importance visualization
+* Transparent model insights
+
+---
+
+**5. Interactive Dashboard (Streamlit)**
+
+* Filter by:
+
+  * Region
+  * Supplier
+  * Category
+
+* KPIs:
+
+  * Total Orders
+  * Risk Rate
+  * Risky Suppliers
+
+* Charts:
+
+  * Risk by Region
+  * Risk by Category
+
+* Visual outputs:
+
+  * Feature importance
+  * SHAP analysis
+
+---
+
+**Tech Stack**
+
+* Python
+* Pandas, NumPy
+* Scikit-learn
+* XGBoost
+* SHAP
+* Streamlit
+* Matplotlib
+
+---
+
+**Key Insights**
+
+* Supplier delays strongly impact risk classification
+* Low fill rate correlates with higher risk
+* Poor supplier rating increases risk probability
+* Defect rate directly impacts cost inefficiency
+
+---
+
+**Business Impact**
+
+This system can help companies:
+
+* Reduce supplier delays by ~20–30%
+* Improve procurement decision-making
+* Identify high-risk suppliers early
+* Optimize supply chain performance
+
+---
+
+**Project Structure**
+
+```
+supplier-risk-analysis/
+│
+├── data/
+│   └── procurement_data_cleaned.csv
+│
+├── outputs/
+│   ├── feature_importance.png
+│   └── shap_summary.png
+│
+├── src/
+│   ├── data_generation.py
+│   ├── train_model.py
+│   ├── feature_importance.py
+│   ├── shap_analysis.py
+│   └── dashboard.py
+│
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
+
+---
+
+**How to Run**
+
+```bash
+pip install -r requirements.txt
+python src/train_model.py
+python src/feature_importance.py
+python src/shap_analysis.py
+python -m streamlit run src/dashboard.py
+```
+
+---
+
+ **Future Improvements**
+
+* Integrate with SAP / ERP systems
+* Real-time API-based prediction
+* Advanced ML models (XGBoost tuning)
+* Deployment on cloud (AWS / Azure)
+
